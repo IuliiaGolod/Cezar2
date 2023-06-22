@@ -6,12 +6,11 @@ public class Main
 {
 static String method = " ";
 
-    public static String printEncodeDecode() {
+    public static void printEncodeDecode() {
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Для расшифровки текста введите 'decode'.\nДля шифрования текста 'encode': ");
         method = scanner.nextLine(); // пишу decode или encode
-        return method;
     }
     private static void decryptedEncrypted() {
         int key = 5;
