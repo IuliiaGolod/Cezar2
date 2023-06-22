@@ -11,6 +11,7 @@ static String method = " ";
         Scanner scanner = new Scanner(System.in);
         System.out.print("Для расшифровки текста введите 'decode'.\nДля шифрования текста 'encode': ");
         method = scanner.nextLine(); // пишу decode или encode
+
     }
     private static void decryptedEncrypted() {
         int key = 5;
