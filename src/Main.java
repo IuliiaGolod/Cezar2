@@ -4,21 +4,26 @@ import java.util.Scanner;
 
 public class Main
 {
+static String method = " ";
 
-    public static void main(String[] args)
-    {
+    public static String printEncodeDecode() {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Для расшифровки текста введите 'decode'.\nДля шифрования текста 'encode': ");
+        method = scanner.nextLine(); // пишу decode или encode
+        return method;
+    }
+    private static void decryptedEncrypted() {
         int key = 5;
 
         String currentPath = System.getProperty("user.dir") + "/src/";
         FileHandler encryptedFile = new FileHandler(currentPath + "encrypted_text.txt");
         FileHandler decryptedFile = new FileHandler(currentPath + "decrypted_text.txt");
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Для расшифровки текста введите 'decode'.\nДля шифрования текста 'encode': ");
-        String method = scanner.nextLine(); // пишу decode или encode
-
         List<String> outputLines = new ArrayList<>();
+
         String outputPath = "";
+
 
         if (method.equals("encode"))
         {
@@ -41,5 +46,12 @@ public class Main
 
         FileHandler outputFile = new FileHandler(outputPath);
         outputFile.writeLines(outputLines);
+        System.out.println("Succsesfull");
+    }
+    public static void main(String[] args) {
+
+        printEncodeDecode();
+        decryptedEncrypted();
+
     }
 }
